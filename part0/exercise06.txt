@@ -1,0 +1,1 @@
+POST {content: "some content", date: "some date"} ----> https://studies.cs.helsinki.fi/exampleapp/new_note_spa

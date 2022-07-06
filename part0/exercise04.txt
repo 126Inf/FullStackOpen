@@ -1,0 +1,8 @@
+POST {note: "some note"} -------> https://studies.cs.helsinki.fi/exampleapp/new_note
+Browser receive 302 to /exampleapp/notes <------- https://studies.cs.helsinki.fi/exampleapp/new_note
+App Get  ----> https://studies.cs.helsinki.fi/exampleapp/notes
+HTML <----- https://studies.cs.helsinki.fi/exampleapp/notes 
+css <----- https://studies.cs.helsinki.fi/exampleapp/main.css *triggered by html head
+js <----- https://studies.cs.helsinki.fi/exampleapp/main.js *triggered by html head
+JS triggers GET ----> https://studies.cs.helsinki.fi/exampleapp/data.json
+JSON Data <------ https://studies.cs.helsinki.fi/exampleapp/data.json

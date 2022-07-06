@@ -1,0 +1,5 @@
+Browser GET ----> https://studies.cs.helsinki.fi/exampleapp/spa
+HTML <---- https://studies.cs.helsinki.fi/exampleapp/spa
+CSS <--- https://studies.cs.helsinki.fi/exampleapp/main.css *triggered by html head
+JS <---- https://studies.cs.helsinki.fi/exampleapp/spa.js *triggered by html head
+JSON <---- https://studies.cs.helsinki.fi/exampleapp/data.json *triggered by JS 
