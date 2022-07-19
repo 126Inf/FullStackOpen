@@ -1,14 +1,20 @@
-import { useState} from "react";
+import { useState, useEffect} from "react";
 import Numbers from "./components/Numbers";
+import axios from 'axios';
 
 const App = () => {
-  const [persons, setPersons] = useState([
-    { name: "Arto Hellas", number: "040-1234567" },
-  ]);
-
+  const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
   const [filteredList, setFilteredList] = useState([...persons]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/persons')
+    .then((res) => {
+      console.log(res);
+      setFilteredList(res.data);
+    })
+  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault();
