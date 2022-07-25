@@ -1,0 +1,6 @@
+.message {
+    color: darkgreen;
+    background-color: lightgreen;
+    border: 1px solid darkgreen;
+    text-align: center;
+}

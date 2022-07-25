@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import Numbers from "./components/Numbers";
 import phoneServices from "./services/phonebook";
+import Message from "./components/Message";
 
 const App = () => {
   const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState("");
   const [newNumber, setNewNumber] = useState("");
   const [filteredList, setFilteredList] = useState([...persons]);
+  const [successMessage, setSuccessMessage] = useState(null);
 
   useEffect(() => {
     phoneServices.getAll().then((phoneNumbers) => {
@@ -39,6 +41,10 @@ const App = () => {
         setNewName("");
         setNewNumber("");
         handleFilterChange(e);
+        setSuccessMessage(`${newName} was successfully added`);
+        setTimeout(() => {
+          setSuccessMessage(null);
+        }, 5000);
       })
       .catch((error) => {
         window.alert("There was an error");
@@ -89,6 +95,7 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Message message={successMessage}/>
       <div>
         <div>
           Filter shown with: <input onChange={handleFilterChange} />
